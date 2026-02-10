@@ -1,10 +1,20 @@
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 from suppression.logic import run_suppression_pipeline
 import tempfile
 import os
 from typing import List
 
 app = FastAPI(title="Emotion Suppression Detection API")
+
+# Add CORS middleware to allow frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():
@@ -41,4 +51,4 @@ async def analyze(
         except:
             pass
     
-    return result
+    return result 
