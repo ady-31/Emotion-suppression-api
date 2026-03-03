@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pymongo
+pydantic
+numpy
+pandas
+torch
+torchvision
+deepface
+opencv-python
+moviepy
+librosa
