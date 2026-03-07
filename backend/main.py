@@ -50,7 +50,9 @@ results_collection  = db["results"]     # per-user analysis results
 # ── CORS ───────────────────────────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://suppression.netlify.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -108,6 +110,11 @@ class AccountLogin(BaseModel):
 @app.get("/")
 def root():
     return {"status": "API is running"}
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 
 # ── Routes: Authentication ─────────────────────────────────────────────────────

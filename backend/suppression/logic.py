@@ -16,7 +16,7 @@ import torch.nn as nn
 NEW_PROJECT_DIR = os.path.normpath(
     os.path.join(
         os.path.dirname(__file__),           # …/backend/suppression/
-        "..", "..", "..",                     # up to G:\Capstone
+        "..", "..", "..",                     # up to Emotion-suppression-Backend/
         "NEW Emotion_Suppression_Project-main",
         "Emotion_Suppression_Project-main",
     )
